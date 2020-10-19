@@ -3,6 +3,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import { Route, Switch } from "react-router-dom";
 //import GlobalContext from "../context/GlobalContext";
 import Header from "./Header/Header";
+import Hotels from "./Hotels/Hotels";
 
 const GlobalStyle = createGlobalStyle`
 body {
@@ -23,6 +24,7 @@ const App = () => (
     <GlobalStyle />
     <AppWrapper>
       <Header />
+      <Hotels />
     </AppWrapper>
   </>
 );
