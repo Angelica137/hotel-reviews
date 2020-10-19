@@ -22,9 +22,9 @@ export const Title = styled.h2`
 `;
 
 const Subheader = ({ goBack, title, openForm = false }) => (
-  <subHeaderWrapper>
+  <SubHeaderWrapper>
     <Title>{title}</Title>
-  </subHeaderWrapper>
+  </SubHeaderWrapper>
 );
 
 export default Subheader;
