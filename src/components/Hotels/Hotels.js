@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Subheader from "../Header/Subheader";
+import HotelItem from "./HotelItem";
 
 const HotelItemsWrapper = styled.div`
   display: flex;
