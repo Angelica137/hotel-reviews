@@ -26,3 +26,5 @@ const Subheader = ({ goBack, title, openForm = false }) => (
     <h2>Subheader</h2>
   </subHeaderWrapper>
 );
+
+export default Subheader;
