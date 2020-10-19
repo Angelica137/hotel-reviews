@@ -12,7 +12,7 @@ const HeaderWrapper = styled.div`
   color: white;
 `;
 
-const Title = styled.div`
+const Title = styled.h1`
   pointer-events: none;
 `;
 
