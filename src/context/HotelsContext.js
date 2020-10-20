@@ -54,4 +54,26 @@ const HotelContextProvider = ({ children }) => {
       dispatch({ type: "GET_HOTELS_ERROR", payload: result.error });
     }
   };
+
+  const getHotelRequest = async (id) => {
+    const resutl = await Api.fetchData(
+      `https://my-json-server.typicode.com/pranayfpackt/-React-Projects/hotels/${id}`
+    );
+
+    if (result.data && result.data.hasOwnProperty("id")) {
+      dispatch({ type: "GET±_HOTEL_SUCCESS", payload: result.data });
+    } else {
+      dispatch({ type: "GET_HOTEL_ERROR", payload: result.error });
+    }
+  };
+
+  return (
+    <HotelsContext.Provider
+      value={{ ...value, getHotelsRequest, getHotelRequest }}
+    >
+      {children}
+    </HotelsContext.Provider>
+  );
 };
+
+export default HotelsContextProvider;
