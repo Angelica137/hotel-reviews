@@ -39,3 +39,19 @@ const reducer = (value, action) => {
       };
   }
 };
+
+const HotelContextProvider = ({ children }) => {
+  const [value, dispatch] = React.useReducer(reducer, initialValue);
+
+  const getHotelsRequest = async () => {
+    const result = await Api.fetchData(
+      "https://my-json-server.typicode.com/pranayfpackt/-React-Projects/hotels"
+    );
+
+    if (result.data && result.data.length) {
+      dispatch({ type: "GET_HOTELS_SUCCESS", payload: result.data });
+    } else {
+      dispatch({ type: "GET_HOTELS_ERROR", payload: result.error });
+    }
+  };
+};
