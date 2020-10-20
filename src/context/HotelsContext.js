@@ -40,7 +40,7 @@ const reducer = (value, action) => {
   }
 };
 
-const HotelContextProvider = ({ children }) => {
+const HotelsContextProvider = ({ children }) => {
   const [value, dispatch] = React.useReducer(reducer, initialValue);
 
   const getHotelsRequest = async () => {
