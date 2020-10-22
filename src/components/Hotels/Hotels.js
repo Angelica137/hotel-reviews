@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { HotelsContext } from "../../context/HotelsContextProvider";
 import Subheader from "../Header/Subheader";
 import HotelItem from "./HotelItem";
 
@@ -22,13 +23,27 @@ const Alert = styled.span`
 `;
 
 const Hotels = ({ history }) => {
-  return (
+  const { hotels, loading, error, getHotelsRequest } = React.useContext(
+    HotelsContext
+  );
+  React.useEffect(() => {
+    getHotelsRequest();
+  }, [getHotelsRequest]);
+
+  return !loading && !error ? (
     <>
-      <Subheader title="Your reviews" />
+      {history && <Subheader title="Your reviews" />}
       <HotelItemsWrapper>
-        <h3>This is a hotel</h3>
+        {hotels &&
+          hotels.map((hotel) => (
+            <HotelLink key={hotel.id} to={`hotel/${hotel.id}`}>
+              <HotelItem data={hotel} />
+            </HotelLink>
+          ))}
       </HotelItemsWrapper>
     </>
+  ) : (
+    <Alert>{loading ? "Loading..." : error}</Alert>
   );
 };
 
