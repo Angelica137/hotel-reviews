@@ -56,7 +56,7 @@ const HotelsContextProvider = ({ children }) => {
   };
 
   const getHotelRequest = async (id) => {
-    const resutl = await Api.fetchData(
+    const result = await Api.fetchData(
       `https://my-json-server.typicode.com/pranayfpackt/-React-Projects/hotels/${id}`
     );
 
