@@ -1,11 +1,11 @@
 import React from "react";
-import Hotels from "../components/Hotels/Hotels";
-import HotelsContextProvider, { HotelsContext } from "./HotelsContextProvider";
+import HotelsContextProvider from "./HotelsContextProvider";
+import ReviewsContextProvider from "./ReviewsContextProvider";
 
 const GlobalContext = ({ children }) => {
   return (
     <HotelsContextProvider>
-      <h2>Reviews live here</h2>
+      <ReviewsContextProvider>{children}</ReviewsContextProvider>
     </HotelsContextProvider>
   );
 };
