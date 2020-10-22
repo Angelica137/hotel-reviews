@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import { Route, Switch } from "react-router-dom";
-//import GlobalContext from "../context/GlobalContext";
+import GlobalContext from "../context/GlobalContext";
 import Header from "./Header/Header";
 import Hotels from "./Hotels/Hotels";
 
@@ -24,7 +24,11 @@ const App = () => (
     <GlobalStyle />
     <AppWrapper>
       <Header />
-      <Hotels />
+      <GlobalContext>
+        <Switch>
+          <Route exact path="/" component={Hotels} />
+        </Switch>
+      </GlobalContext>
     </AppWrapper>
   </>
 );
