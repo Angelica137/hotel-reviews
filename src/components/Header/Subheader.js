@@ -22,18 +22,18 @@ export const Title = styled.h2`
   }
 `;
 
-export const SubheaderButton = styled(Button)`
+export const SubHeaderButton = styled(Button)`
   margin: 10px 5%;
 `;
 
 const Subheader = ({ goBack, title, openForm = false }) => (
   <SubHeaderWrapper>
     {goBack && (
-      <SubheaderButton onClick={goBack}>{`< Go Back`}</SubheaderButton>
+      <SubHeaderButton onClick={goBack}>{`< Go Back`}</SubHeaderButton>
     )}
     <Title>{title}</Title>
     {openForm && (
-      <SubheaderButton onClick={openForm}>{`+ Add Review`}</SubheaderButton>
+      <SubHeaderButton onClick={openForm}>{`+ Add Review`}</SubHeaderButton>
     )}
   </SubHeaderWrapper>
 );
