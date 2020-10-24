@@ -48,3 +48,5 @@ const Detail = ({ match, history }) => {
     <Alert>{loading ? "Loading..." : error}</Alert>
   );
 };
+
+export default Detail;
