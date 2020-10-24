@@ -40,7 +40,7 @@ const Detail = ({ match, history }) => {
         />
       )}
       <ReviewsWrapper>
-        {revies &&
+        {reviews &&
           reviews.map((review) => <ReviewItem key={review.id} data={review} />)}
       </ReviewsWrapper>
     </>
