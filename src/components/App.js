@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import GlobalContext from "../context/GlobalContext";
 import Header from "./Header/Header";
 import Hotels from "./Hotels/Hotels";
+import Detail from "./Detail/Detail";
 
 const GlobalStyle = createGlobalStyle`
 body {
@@ -27,6 +28,7 @@ const App = () => (
       <GlobalContext>
         <Switch>
           <Route exact path="/" component={Hotels} />
+          <Route path="/hotel/:id" component={Detail} />
         </Switch>
       </GlobalContext>
     </AppWrapper>

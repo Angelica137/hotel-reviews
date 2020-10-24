@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Button from "../Button/Button";
 
 const SubHeaderWrapper = styled.div`
   width: 100%;
@@ -21,9 +22,19 @@ export const Title = styled.h2`
   }
 `;
 
+export const SubHeaderButton = styled(Button)`
+  margin: 10px 5%;
+`;
+
 const Subheader = ({ goBack, title, openForm = false }) => (
   <SubHeaderWrapper>
+    {goBack && (
+      <SubHeaderButton onClick={goBack}>{`< Go Back`}</SubHeaderButton>
+    )}
     <Title>{title}</Title>
+    {openForm && (
+      <SubHeaderButton onClick={openForm}>{`+ Add Review`}</SubHeaderButton>
+    )}
   </SubHeaderWrapper>
 );
 
