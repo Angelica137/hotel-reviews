@@ -22,4 +22,29 @@ const Detail = ({ match, history }) => {
   const { loading, error, reviews, getReviewsRequest } = React.useContext(
     ReviewsContext
   );
+
+  React.useEffect(() => {
+    getHotelRequest(match.params.id);
+    if (!reviews.length > 0) {
+      getReviewsRequest(match.params.id);
+    }
+  }, [getHotelRequest, getReviewsRequest, match.params.id, reviews.length]);
+
+  return !loading && !error ? (
+    <>
+      {history && hotel && (
+        <Subheader
+          goBack={() => history.goBack()}
+          title={hotel.title}
+          openForm={() => history.push(`${match.url}/new`)}
+        />
+      )}
+      <ReviewsWrapper>
+        {revies &&
+          reviews.map((review) => <ReviewItem key={review.id} data={review} />)}
+      </ReviewsWrapper>
+    </>
+  ) : (
+    <Alert>{loading ? "Loading..." : error}</Alert>
+  );
 };
