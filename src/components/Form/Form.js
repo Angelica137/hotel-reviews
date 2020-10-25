@@ -34,4 +34,43 @@ const Form = ({ match, history }) => {
     });
     history.goBack();
   };
+
+  return (
+    <>
+      {history && (
+        <Subheader goBack={() => history.goBack()} title={`Add Review`} />
+      )}
+      <FormWrapper>
+        <form onSubmit={handleOnSubmit}>
+          <FormInput
+            id="title"
+            label="Title"
+            placeholder="Insert title"
+            value={title}
+            handleOnChange={setTitle}
+          />
+          <FormInput
+            id="rating"
+            label="Rating"
+            type="number"
+            placeholder="0"
+            max={5}
+            value={rating}
+            handleOnChange={setRating}
+          />
+          <FormInput
+            id="description"
+            label="Description"
+            type="textarea"
+            placeholder="Lorem ipsum..."
+            value={description}
+            handleOnChange={setDescription}
+          />
+          <SubmitButton>Add review</SubmitButton>
+        </form>
+      </FormWrapper>
+    </>
+  );
 };
+
+export default Form;
