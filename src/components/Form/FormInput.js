@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const FromInputWrapper = styled.div`
+const FormInputWrapper = styled.div`
   display: flex;
   text-align: left;
   flex-direction: column;

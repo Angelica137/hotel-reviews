@@ -5,6 +5,7 @@ import GlobalContext from "../context/GlobalContext";
 import Header from "./Header/Header";
 import Hotels from "./Hotels/Hotels";
 import Detail from "./Detail/Detail";
+import Form from "./Form/Form";
 
 const GlobalStyle = createGlobalStyle`
 body {
@@ -28,6 +29,7 @@ const App = () => (
       <GlobalContext>
         <Switch>
           <Route exact path="/" component={Hotels} />
+          <Route path="hotel/:id/new" component={Form} />
           <Route path="/hotel/:id" component={Detail} />
         </Switch>
       </GlobalContext>

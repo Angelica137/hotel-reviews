@@ -23,7 +23,7 @@ const Form = ({ match, history }) => {
   const [rating, setRating] = React.useState("");
   const [description, setDescription] = React.useState("");
 
-  const handleOnChange = (e) => {
+  const handleOnSubmit = (e) => {
     e.preventDefault();
     addReviewRequest({
       title,
