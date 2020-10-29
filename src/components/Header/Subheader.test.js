@@ -13,7 +13,14 @@ describe("the <Subheader /> component", () => {
   });
 
   it("should render with a dynamic title", () => {
-    renderer.render(<Subheader title="Test Application" />);
+    renderer.render(<Subheader title="Test Application Test" />);
+    const component = renderer.getRenderOutput();
+
+    expect(component).toMatchSnapshot();
+  });
+
+  it("should render with a goback button", () => {
+    renderer.render(<Subheader goBack={() => {}} />);
     const component = renderer.getRenderOutput();
 
     expect(component).toMatchSnapshot();
