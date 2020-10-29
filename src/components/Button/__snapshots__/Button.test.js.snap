@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`the <Button /> component should render 1`] = `
-<ForwardRef(styled.button)>
-  This is a button
-</ForwardRef(styled.button)>
-`;

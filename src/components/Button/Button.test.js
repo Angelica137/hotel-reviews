@@ -5,11 +5,11 @@ import Button from "./Button";
 describe("the <Button /> component", () => {
   const renderer = new ShallowRenderer();
 
-  it("should render", () => {
+  it("should render the correct children", () => {
     const children = "This is a button";
     renderer.render(<Button>{children}</Button>);
-    const result = renderer.getRenderOutput();
+    const component = renderer.getRenderOutput();
 
-    expect(result).toMatchSnapshot();
+    expect(component.props.children).toEqual(children);
   });
 });
