@@ -1,3 +1,4 @@
+import { render } from "@testing-library/react";
 import React from "react";
 import ShallowRenderer from "react-test-renderer/shallow";
 import Subheader from "./Subheader";
@@ -22,6 +23,13 @@ describe("the <Subheader /> component", () => {
   it("should render with a goback button", () => {
     renderer.render(<Subheader goBack={() => {}} />);
     const component = renderer.getRenderOutput();
+
+    expect(component).toMatchSnapshot();
+  });
+
+  it("should render with a form button", () => {
+    renderer.render(<Subheader openForm={() => {}} />);
+    const result = renderer.getRenderOutput();
 
     expect(component).toMatchSnapshot();
   });
