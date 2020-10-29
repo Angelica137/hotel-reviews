@@ -5,3 +5,5 @@ A hotel reviews application to learn TDDing a react application with Jest and En
 Snapshot testing.
 
 Assertion testing
+
+Using Enzyme for testing react
