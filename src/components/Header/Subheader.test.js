@@ -29,7 +29,7 @@ describe("the <Subheader /> component", () => {
 
   it("should render with a form button", () => {
     renderer.render(<Subheader openForm={() => {}} />);
-    const result = renderer.getRenderOutput();
+    const component = renderer.getRenderOutput();
 
     expect(component).toMatchSnapshot();
   });

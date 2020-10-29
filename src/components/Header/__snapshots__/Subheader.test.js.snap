@@ -14,6 +14,17 @@ exports[`the <Subheader /> component should render with a dynamic title 1`] = `
 </ForwardRef(styled.div)>
 `;
 
+exports[`the <Subheader /> component should render with a form button 1`] = `
+<ForwardRef(styled.div)>
+  <ForwardRef(styled.h2) />
+  <ForwardRef(Styled(Button))
+    onClick={[Function]}
+  >
+    + Add Review
+  </ForwardRef(Styled(Button))>
+</ForwardRef(styled.div)>
+`;
+
 exports[`the <Subheader /> component should render with a goback button 1`] = `
 <ForwardRef(styled.div)>
   <ForwardRef(Styled(Button))
