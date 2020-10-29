@@ -6,4 +6,4 @@ Snapshot testing.
 
 Assertion testing
 
-Using Enzyme for testing react
+Shallow rendering with Enzyme
