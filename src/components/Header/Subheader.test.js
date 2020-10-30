@@ -1,35 +1,31 @@
 import { render } from "@testing-library/react";
 import React from "react";
-import ShallowRenderer from "react-test-renderer/shallow";
+import { shallow, configure } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
+configure({ adapter: new Adapter() });
 import Subheader from "./Subheader";
 
 describe("the <Subheader /> component", () => {
-  const renderer = new ShallowRenderer();
-
   it("should render", () => {
-    renderer.render(<Subheader />);
-    const component = renderer.getRenderOutput();
+    const component = shallow(<Subheader />);
 
     expect(component).toMatchSnapshot();
   });
 
   it("should render with a dynamic title", () => {
-    renderer.render(<Subheader title="Test Application Test" />);
-    const component = renderer.getRenderOutput();
+    const component = shallow(<Subheader title="Test Application" />);
 
     expect(component).toMatchSnapshot();
   });
 
   it("should render with a goback button", () => {
-    renderer.render(<Subheader goBack={() => {}} />);
-    const component = renderer.getRenderOutput();
+    const component = shallow(<Subheader goBack={() => {}} />);
 
     expect(component).toMatchSnapshot();
   });
 
   it("should render with a form button", () => {
-    renderer.render(<Subheader openForm={() => {}} />);
-    const component = renderer.getRenderOutput();
+    const component = shallow(<Subheader openForm={() => {}} />);
 
     expect(component).toMatchSnapshot();
   });
