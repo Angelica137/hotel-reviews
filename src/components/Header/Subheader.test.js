@@ -19,9 +19,11 @@ describe("the <Subheader /> component", () => {
   });
 
   it("should render with a goback button", () => {
-    const component = shallow(<Subheader goBack={() => {}} />);
+    const mockGoBack = jest.fn();
+    const component = shallow(<Subheader goBack={mockGoBack} />);
 
-    expect(component).toMatchSnapshot();
+    const goBackButton = component.find(SubHeaderButton);
+    expect(goBackButton.exists()).toBe(true);
   });
 
   it("should render with a form button", () => {

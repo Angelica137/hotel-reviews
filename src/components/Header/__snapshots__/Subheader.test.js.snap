@@ -2,8 +2,4 @@
 
 exports[`the <Subheader /> component should render 1`] = `ShallowWrapper {}`;
 
-exports[`the <Subheader /> component should render with a dynamic title 1`] = `ShallowWrapper {}`;
-
 exports[`the <Subheader /> component should render with a form button 1`] = `ShallowWrapper {}`;
-
-exports[`the <Subheader /> component should render with a goback button 1`] = `ShallowWrapper {}`;
