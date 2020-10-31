@@ -18,7 +18,7 @@ describe("the <Subheader /> component", () => {
     expect(component.find(Title).text()).toEqual(title);
   });
 
-  it("should render with a goback button", () => {
+  it("should render with a goback button amd handle the onClick event", () => {
     const mockGoBack = jest.fn();
     const component = shallow(<Subheader goBack={mockGoBack} />);
 
@@ -27,6 +27,7 @@ describe("the <Subheader /> component", () => {
 
     goBackButton.simulate("click");
     expect(mockGoBack).toHaveBeenCalled();
+    u;
   });
 
   it("should render with a form button", () => {
