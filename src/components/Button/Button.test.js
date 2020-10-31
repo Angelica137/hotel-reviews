@@ -1,15 +1,23 @@
 import React from "react";
-import ShallowRenderer from "react-test-renderer/shallow";
+import { shallow, configure } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
+configure({ adapter: new Adapter() });
 import Button from "./Button";
 
 describe("the <Button /> component", () => {
-  const renderer = new ShallowRenderer();
-
   it("should render the correct children", () => {
-    const children = "This is a button";
-    renderer.render(<Button>{children}</Button>);
-    const component = renderer.getRenderOutput();
+    const children = "this is button";
+    const component = shallow(<Button>{children}</Button>);
 
-    expect(component.props.children).toEqual(children);
+    expect(component.props().children).toEqual(children);
+  });
+
+  it("should handle the onClick event", () => {
+    const mockOnClick = jest.fn();
+    const component = shallow(<Button onClick={mockOnClick} />);
+
+    component.simulate("click");
+
+    expect(mockOnClick).toHaveBeenCalled();
   });
 });
