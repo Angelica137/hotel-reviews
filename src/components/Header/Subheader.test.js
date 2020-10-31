@@ -24,6 +24,9 @@ describe("the <Subheader /> component", () => {
 
     const goBackButton = component.find(SubHeaderButton);
     expect(goBackButton.exists()).toBe(true);
+
+    goBackButton.simulate("click");
+    expect(mockGoBack).toHaveBeenCalled();
   });
 
   it("should render with a form button", () => {
