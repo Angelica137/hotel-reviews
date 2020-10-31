@@ -11,4 +11,13 @@ describe("the <Button /> component", () => {
 
     expect(component.props().children).toEqual(children);
   });
+
+  it("should handle the onClick event", () => {
+    const mockOnClick = jest.fn();
+    const component = shallow(<Button onClick={mockOnClick} />);
+
+    component.simulate("click");
+
+    expect(mockOnClick).toHaveBeenCalled();
+  });
 });
