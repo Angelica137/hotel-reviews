@@ -2,7 +2,7 @@ import React from "react";
 import { shallow, configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 configure({ adapter: new Adapter() });
-import Subheader from "./Subheader";
+import Subheader, { Title, SubHeaderButton } from "./Subheader";
 
 describe("the <Subheader /> component", () => {
   it("should render", () => {
@@ -12,9 +12,10 @@ describe("the <Subheader /> component", () => {
   });
 
   it("should render with a dynamic title", () => {
-    const component = shallow(<Subheader title="Test Application" />);
+    const title = "Test Application";
+    const component = shallow(<Subheader title={title} />);
 
-    expect(component).toMatchSnapshot();
+    expect(component.find(Title).text()).toEqual(title);
   });
 
   it("should render with a goback button", () => {
