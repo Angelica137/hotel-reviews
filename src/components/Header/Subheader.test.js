@@ -18,21 +18,23 @@ describe("the <Subheader /> component", () => {
     expect(component.find(Title).text()).toEqual(title);
   });
 
-  it("should render with a goback button amd handle the onClick event", () => {
+  it("should render with a goback and form button amd handle the onClick event", () => {
     const mockGoBack = jest.fn();
-    const component = shallow(<Subheader goBack={mockGoBack} />);
+    const mockOpenForm = jest.fn();
+    const component = shallow(
+      <Subheader goBack={mockGoBack} openForm={mockOpenForm} />
+    );
 
-    const goBackButton = component.find(SubHeaderButton);
+    const goBackButton = component.find(SubHeaderButton).at(0);
     expect(goBackButton.exists()).toBe(true);
+
+    const openFormButton = component.find(SubHeaderButton).at(1);
+    expect(openFormButton.exists()).toBe(true);
 
     goBackButton.simulate("click");
     expect(mockGoBack).toHaveBeenCalled();
-    u;
-  });
 
-  it("should render with a form button", () => {
-    const component = shallow(<Subheader openForm={() => {}} />);
-
-    expect(component).toMatchSnapshot();
+    openFormButton.simulate("click");
+    expect(mockOpenForm).toHaveBeenCalled();
   });
 });
