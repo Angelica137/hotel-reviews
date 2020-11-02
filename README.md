@@ -7,3 +7,5 @@ Snapshot testing.
 Assertion testing
 
 Shallow rendering with Enzyme
+
+Integration testing
